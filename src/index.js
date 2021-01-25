@@ -6,6 +6,7 @@ const UrlPort = process.env.PORT || 3000;
 app.use(express.json());
 
 require('./controllers/userController')(app)
+require('./controllers/UserListControllers')(app)
 
 app.listen(UrlPort , () =>{
     console.log('Servidor connect')

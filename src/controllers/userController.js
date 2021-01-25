@@ -1,9 +1,20 @@
 const express = require('express');
 
 const User = require('../models/User');
+const List = require('../models/MyList')
 const bcrypt = require('bcryptjs');
-
+const jwt = require('jsonwebtoken')
 const router = express.Router();
+
+const authConfig = require('../config/auth')
+
+const GerationToken = (params)=>{
+
+    return jwt.sign({ params } , authConfig , {
+        expiresIn: 86400
+    })
+
+}
 
 router.get('/list' , async (req , res) =>{
 
@@ -46,7 +57,12 @@ router.post('/signIn' , async (req , res) =>{
 
         user.password = undefined;
 
-        res.json({user})
+        res.json({
+
+            user,
+            token: GerationToken({id: user.id})
+        
+        })
 
 
     }
@@ -63,22 +79,21 @@ router.post('/signIn' , async (req , res) =>{
 
 })
 
-router.post('/teste' , async (req , res) =>{
-
-    const user = await User.create(req.body)
-
-    res.json({user})
-    
-})
 router.post('/register' , async (req , res ) =>{
 
     try{
 
       const user = await User.create(req.body)
 
+      await List.create({ idUser: user.id})
+
       user.password = undefined
 
-      res.json({user})
+      res.json({
+          user,
+          token: GerationToken({id: user.id})
+        
+        })
 
     }
     catch(err){
@@ -93,5 +108,7 @@ router.post('/register' , async (req , res ) =>{
     }
 
 })
+
+
 
 module.exports = app => app.use('/user' , router)
