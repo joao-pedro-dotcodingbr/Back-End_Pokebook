@@ -2,30 +2,36 @@ const mongoose = require('../database')
 
 const listSchema = new mongoose.Schema({
 
-    idUser:{
-        type:String,
+    User:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'User',
         required:true
     },
-    pokemonsHeart:{
+    pokemonsHeart:[{
 
-        type:[String],
-        required:false
+        type:String,
+        required:false,
+        unique:true
         
-    },
+    }],
     //Seguidores
-    followers:{
+    followers:[{
 
-        type: [String],
-        required:false
-
-    },
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'User',
+        required:false,
+        unique:true
+        
+    }],
     //Seguindo
-    followersMy:{
+    followersMy:[{
 
-        type: [String],
-        required:false
-
-    }
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'User',
+        required:false,
+        unique:true
+        
+    }]
 
 })
 

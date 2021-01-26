@@ -85,7 +85,7 @@ router.post('/register' , async (req , res ) =>{
 
       const user = await User.create(req.body)
 
-      await List.create({ idUser: user.id})
+      await List.create({ User: user.id})
 
       user.password = undefined
 
