@@ -22,7 +22,6 @@ router.get('/user/:idUser' , async (req , res) =>{
 
     }
 
-  
 })
 
 router.put('/addItem/:idUser' , async (req , res) =>{
