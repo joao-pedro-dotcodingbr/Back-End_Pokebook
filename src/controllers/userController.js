@@ -96,7 +96,7 @@ router.post('/register' , async (req , res ) =>{
       await templates.SendMensage( 
 
         "Pokébook <pokebook.com.br>" , 
-        ['jppereiradesouza29@gmail.com'] , 
+        [user.email] , 
         'Bem vindo :)' , 
         'Seja bem vindo',
         ['Sua conta no pokebook:', 'Commodo consectetur mollit nisi veniam ut officia ipsum. Amet eiusmod nostrud proident irure in deserunt incididunt. Aute eu amet eiusmod cupidatat ad velit velit minim consectetur in id in nulla dolore. Nostrud non pariatur labore nulla deserunt quis tempor ad minim ipsum sint ullamco aute sit. Aute veniam labore sit qui ipsum cupidatat consequat dolor ea enim quis. Ullamco exercitation sunt esse incididunt non esse aliqua elit excepteur sit sunt ex sit. Fugiat ex do esse reprehenderit pariatur nulla elit.']
@@ -151,7 +151,7 @@ router.post('/forgot_password' , async (req , res) =>{
         await templates.SendMensagePass( 
 
                 "Pokebook <pokebook.com.br>" , 
-                ['jppereiradesouza29@gmail.com'] , 
+                [email] , 
                 'Recuperar a senha' , 
                 'Código de recuperação de senha',
                 ['Senha de recuperação de senha:' , 'Senha de recuperação válida em 24h, caso perca a validade refaça o pedido de recuperação' ,  token]
