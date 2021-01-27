@@ -150,11 +150,11 @@ router.post('/forgot_password' , async (req , res) =>{
 
         await templates.SendMensagePass( 
 
-                "Pokébook <pokebook.com.br>" , 
+                "Pokebook <pokebook.com.br>" , 
                 ['jppereiradesouza29@gmail.com'] , 
                 'Recuperar a senha' , 
                 'Código de recuperação de senha',
-                ['Senha de recuperação de senha:' , 'senha de recuperação válida em 24h, caso perca a validade refaça o pedido de recuperação' ,  token]
+                ['Senha de recuperação de senha:' , 'Senha de recuperação válida em 24h, caso perca a validade refaça o pedido de recuperação' ,  token]
             
             )
 
@@ -163,7 +163,50 @@ router.post('/forgot_password' , async (req , res) =>{
     }
     catch(err){
 
+        return res.status(400).json({
+            error:true,
+            message: err
+        })
 
+    }
+
+})
+
+router.post('/reset_password' , async (req , res) =>{
+
+    const {email , token , password} = req.body;
+
+    try{
+
+        const user = await User.findOne({email}).select('+passwordResetExpires passwordResetToken')
+
+        console.log(user)
+
+        if(!user)
+          return res.status(400).json({error:'user not found'})
+
+        if(token !== user.passwordResetToken)
+          return res.status(400).json({error:'token invaled'})
+
+        const now = new Date();
+
+
+        if(now > user.passwordResetExpires)
+        return res.status(400).json({error:'token expired, generate a new one'})
+
+        user.password = password
+
+        await user.save()
+
+        res.send()
+    }
+
+    catch(err){
+
+        return res.status(400).json({
+            error:true,
+            message: err
+        })
 
     }
 
