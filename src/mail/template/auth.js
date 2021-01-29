@@ -22,11 +22,11 @@ const data =
           
             </div>
 
-            <div style="background:#3D3D3D;padding: 30px 0 0 0;"> 
+            <div style="background:#3D3D3D;padding:0.4rem 0 0 2rem;"> 
         
-                <p style="color:#fff; font-wegth:bold; font-family: Arial, sans-serif; font-size: 20px;"> ${title} </p>
+                <p style="color:#fff; font-wegth:bold; font-family: Arial, sans-serif; font-size: 1.4rem;"> ${title} </p>
 
-                <p style="color:#fff; font-wegth:bold; font-family: Arial, sans-serif; font-size: 15px; margin-top:10px; margin-right:30px; opacity:0.8">
+                <p style="color:#fff; font-wegth:bold; font-family: Arial, sans-serif; font-size: 0.7rem; margin-top:10px; margin-right:30px; opacity:0.8">
 
                  ${submensage} 
 
