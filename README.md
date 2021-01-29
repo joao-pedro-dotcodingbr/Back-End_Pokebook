@@ -3,11 +3,11 @@
 [![Link](https://img.shields.io/badge/-Project_Mobile-FACF5A?style=flat-square&logo=Color=fff&link=https://github.com/joaopedro29/Project-Pokemon-Mobile)](https://github.com/joaopedro29/Project-Pokemon-Mobile)
 
 
-![teste](https://github.com/joaopedro29/Project-Pokemon-Mobile/blob/main/Image/iconNodejs.png?raw=true =250x)![teste](https://github.com/joaopedro29/Project-Pokemon-Mobile/blob/main/Image/iconMongoDB.png?raw=true =250x)
+![teste](https://raw.githubusercontent.com/joaopedro29/Project-Pokemon-Mobile/main/Image/iconNodejs.png =250x)![teste](https://raw.githubusercontent.com/joaopedro29/Project-Pokemon-Mobile/main/Image/iconMongoDB.png =250x)
 
 ## Accommodation
 
-![mongo](https://github.com/joaopedro29/Project-Pokemon-Mobile/blob/main/Image/iconHeroku.png?raw=true =250x)
+![mongo](https://raw.githubusercontent.com/joaopedro29/Project-Pokemon-Mobile/main/Image/iconHeroku.png =250x)
 
 ## Descriptions
 
