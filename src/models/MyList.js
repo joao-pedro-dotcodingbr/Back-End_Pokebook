@@ -11,7 +11,6 @@ const listSchema = new mongoose.Schema({
 
         type:String,
         required:false,
-        unique:true
         
     }],
     //Seguidores
@@ -20,7 +19,7 @@ const listSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref:'User',
         required:false,
-        unique:true
+
         
     }],
     //Seguindo
@@ -29,7 +28,7 @@ const listSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref:'User',
         required:false,
-        unique:true
+
         
     }]
 

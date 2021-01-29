@@ -1,5 +1,6 @@
 const express = require('express');
 const List = require('../models/MyList')
+const User = require('../models/User')
 const authMiddlewares = require('../middlewares/auth')
 const router = express.Router()
 
@@ -11,6 +12,11 @@ router.get('/user/:idUser' , async (req , res) =>{
 
         const list = await List.findOne({User: req.params.idUser}).populate(['followers' , 'followersMy' , 'User']);
 
+        if(!list){
+
+            return res.status(400).send('The user for this list was not found')
+        }
+
         return res.json(list)
 
     }
@@ -18,7 +24,7 @@ router.get('/user/:idUser' , async (req , res) =>{
 
         console.log(err)
 
-        return res.status(400).json({error:err})
+        return res.status(400).send('Usuário não encontrado')
 
     }
 

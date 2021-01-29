@@ -22,7 +22,7 @@ const data =
         </head>
         <body style="margin: 0; padding: 0; display:block; justify-content:center;background:#3D3D3D;">
 
-            <div style="width:100%;background:#3D3D3D; padding: 20px 0;"> 
+            <div style="width:100%;background:#3D3D3D; padding-top:200px;"> 
                 
                 <img src="https://fontmeme.com/permalink/210126/cab0ea83f26568630e3431a55a2af0a6.png" alt="logo" width="280" style="display: block; object-fit: contain;margin:auto"/>
                 <img src="https://github.com/joaopedro29/Project-Pokemon-Mobile/blob/main/PokemonMobile/src/assets/phanpyRight.png?raw=true" alt="iconLogo" width="120" style="display: block; object-fit: contain;margin:auto"/>

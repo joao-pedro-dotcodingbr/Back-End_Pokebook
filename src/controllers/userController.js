@@ -89,7 +89,7 @@ router.post('/register' , async (req , res ) =>{
 
       const user = await User.create(req.body)
 
-      await List.create({ User: user.id})
+      await List.create({User: user.id})
 
       user.password = undefined
 
@@ -102,8 +102,7 @@ router.post('/register' , async (req , res ) =>{
         ['Sua conta no pokebook:', 'Commodo consectetur mollit nisi veniam ut officia ipsum. Amet eiusmod nostrud proident irure in deserunt incididunt. Aute eu amet eiusmod cupidatat ad velit velit minim consectetur in id in nulla dolore. Nostrud non pariatur labore nulla deserunt quis tempor ad minim ipsum sint ullamco aute sit. Aute veniam labore sit qui ipsum cupidatat consequat dolor ea enim quis. Ullamco exercitation sunt esse incididunt non esse aliqua elit excepteur sit sunt ex sit. Fugiat ex do esse reprehenderit pariatur nulla elit.']
         
         )
-
-
+        
       res.json({
           user,
           token: GerationToken({id: user.id})
@@ -179,8 +178,6 @@ router.post('/reset_password' , async (req , res) =>{
     try{
 
         const user = await User.findOne({email}).select('+passwordResetExpires passwordResetToken')
-
-        console.log(user)
 
         if(!user)
           return res.status(400).json({error:'user not found'})
