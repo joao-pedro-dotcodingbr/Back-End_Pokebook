@@ -48,7 +48,7 @@ const data =
         
         <p> ${submensage} </p>
 
-        <p  id="textToken" style="padding:10px; color: #ffffff; font-weight: bold; border-radius: 5px; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px; background-color:#76ADAE">
+        <p  id="textToken" style="padding:10px; color: #ffffff; font-weight: bold; border-radius: 5px; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px; background-color:#6FA6A8">
         ${tokenPass}
         </p>
 
@@ -80,9 +80,9 @@ const data =
 
                     <div style="margin:0 20px 0 0;"> 
 
-                            <a href="${linkLinkedin}" cursor="pointer" style="padding:10px; color: #ffffff;text-decoration: none; font-weight: bold; border-radius: 5px; font-family: Arial, sans-serif; font-size: 10px; line-height: 20px; background-color: #76ADAE">Linkedin</a>
-                            <a href="${linkInstagram}" cursor="pointer" style="padding:10px; color: #ffffff; font-weight: bold; border-radius: 5px; font-family: Arial, sans-serif; font-size: 10px;text-decoration: none; line-height: 20px; background-color: #76ADAE">instagram</a>
-                            <a href="${linkEmail}" cursor="pointer" style="padding:10px; color: #ffffff; font-weight: bold; border-radius: 5px; font-family: Arial, sans-serif; font-size: 10px;text-decoration: none; line-height: 20px; background-color: #76ADAE">email</a>
+                            <a href="${linkLinkedin}" cursor="pointer" style="padding:10px; color: #ffffff;text-decoration: none; font-weight: bold; border-radius: 5px; font-family: Arial, sans-serif; font-size: 10px; line-height: 20px; background-color: #6FA6A8">Linkedin</a>
+                            <a href="${linkInstagram}" cursor="pointer" style="padding:10px; color: #ffffff; font-weight: bold; border-radius: 5px; font-family: Arial, sans-serif; font-size: 10px;text-decoration: none; line-height: 20px; background-color: #6FA6A8">instagram</a>
+                            <a href="${linkEmail}" cursor="pointer" style="padding:10px; color: #ffffff; font-weight: bold; border-radius: 5px; font-family: Arial, sans-serif; font-size: 10px;text-decoration: none; line-height: 20px; background-color: #6FA6A8">email</a>
                 
                     </div>
                     
