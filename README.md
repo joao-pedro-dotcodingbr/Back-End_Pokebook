@@ -3,8 +3,7 @@
 [![Link](https://img.shields.io/badge/-Project_Mobile-FACF5A?style=flat-square&logo=Color=fff&link=https://github.com/joaopedro29/Project-Pokemon-Mobile)](https://github.com/joaopedro29/Project-Pokemon-Mobile)
 
 
-![teste](https://github.com/joaopedro29/Back-End_Pokebook/blob/main/Image/iconNodejs.png)
-![Nodejs](https://raw.githubusercontent.com/joaopedro29/Back-End_Pokebook/main/Image/iconMongoDB.png)
+![teste](https://github.com/joaopedro29/Back-End_Pokebook/blob/main/Image/iconNodejs.png )![Nodejs](https://raw.githubusercontent.com/joaopedro29/Back-End_Pokebook/main/Image/iconMongoDB.png)
 
 ## Accommodation
 
