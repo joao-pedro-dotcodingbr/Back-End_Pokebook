@@ -8,7 +8,7 @@
 
 ## Accommodation
 
-![mongo](https://raw.githubusercontent.com/joaopedro29/Project-Pokemon-Mobile/main/Image/iconHeroku.png =250x)
+![mongo](https://raw.githubusercontent.com/joaopedro29/Project-Pokemon-Mobile/main/Image/iconHeroku.png)
 
 ## Descriptions
 
