@@ -9,7 +9,8 @@ const jwt = require('jsonwebtoken')
 const templates = require('../mail/index')
 const router = express.Router();
 
-const authConfig = require('../config/auth')
+const authConfig = require('../config/auth');
+const { findOne } = require('../models/User');
 
 const GerationToken = (params)=>{
 
@@ -82,10 +83,21 @@ router.post('/signIn' , async (req , res) =>{
     }
 
 })
+const teste = 'teste'
 
 router.post('/register' , async (req , res ) =>{
 
+    const {email} = req.body;
+
     try{
+
+      const verifEmail = await findOne({email})
+
+      if(verifEmail)
+        return res.status(400).send({error:true , message:'Já existe um usuário com esse Email'})
+
+      if(!email.search('@') > -1)
+        return res.status(400).send({error:true , message:'Email mal formatado (@)'})
 
       const user = await User.create(req.body)
 
