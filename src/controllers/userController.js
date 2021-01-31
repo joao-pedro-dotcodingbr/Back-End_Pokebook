@@ -93,11 +93,19 @@ router.post('/register' , async (req , res ) =>{
       const verifEmail = await findOne({email})
 
       if(verifEmail)
-        return res.status(400).json({error:true , message:'Já existe um usuário com esse Email'})
+        return res.status(400).json({
+            error:true,
+            message:'Já existe um usuário com esse email'
+
+         })
 
       if(!email.search('@') > -1)
-        return res.status(400).json({error:true , message:'Email mal formatado (@)'})
+         return res.status(400).json({
+            error:true,
+            message:'Email mal formatado'
 
+         })
+         
       const user = await User.create(req.body)
 
       await List.create({User: user.id})
