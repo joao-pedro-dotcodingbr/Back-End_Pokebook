@@ -95,19 +95,17 @@ router.post('/register' , async (req , res ) =>{
       if(verifEmail){
 
         return res.status(400).json({
-            error:true,
-            message:'Já existe um usuário com esse email'
+            error:'Já existe um usuário com esse email'
 
          })
 
       }
        
 
-      if(await !email.search('@') > -1){
+      if(email.search('@') == -1){
 
         return res.status(400).json({
-            error:true,
-            message:'Email mal formatado'
+            error:'Email mal formatado'
 
          })
 
