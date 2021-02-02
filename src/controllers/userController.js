@@ -10,7 +10,6 @@ const templates = require('../mail/index')
 const router = express.Router();
 
 const authConfig = require('../config/auth');
-const { findOne } = require('../models/User');
 
 const GerationToken = (params)=>{
 
@@ -25,7 +24,6 @@ router.get('/list' , async (req , res) =>{
     try{
 
         const users = await User.find({})
-
       
         return res.json(users)
 
@@ -48,15 +46,13 @@ router.post('/signIn' , async (req , res) =>{
 
         if(!user)
          return res.status(400).json({
-            error:true,
-            message:'Usuário não encontrado'
+            error:'Usuário não encontrado'
 
          })
 
          if(! await bcrypt.compare( password , user.password ))
             return res.status(400).json({
-                error:true,
-                message:'Senha do usuário incorreto'
+                error:'Senha do usuário incorreto'
 
             })
 
@@ -90,7 +86,16 @@ router.post('/register' , async (req , res ) =>{
 
     try{
 
-      const verifEmail = await findOne({email})
+        if(email.search('@') == -1){
+
+            return res.status(400).json({
+                error:'Email mal formatado'
+    
+             })
+    
+          }
+
+      const verifEmail = await User.findOne({email})
 
       if(verifEmail){
 
@@ -100,18 +105,7 @@ router.post('/register' , async (req , res ) =>{
          })
 
       }
-       
-
-      if(email.search('@') == -1){
-
-        return res.status(400).json({
-            error:'Email mal formatado'
-
-         })
-
-      }
-       
-
+    
       const user = await User.create(req.body)
 
       await List.create({User: user.id})
@@ -180,13 +174,14 @@ router.post('/forgot_password' , async (req , res) =>{
                 'Código de recuperação de senha',
                 ['Senha de recuperação de senha:' , 'Senha de recuperação válida em 24h, caso perca a validade refaça o pedido de recuperação' ,  token]
             
-            )
+        )
 
        return res.send('Email de recuperação enviada com sucesso!! caso não encontre nas mensagens procure na caixa de span')
 
     }
     catch(err){
 
+        console.log(err)
         return res.status(400).json({
             error:true,
             message: err
