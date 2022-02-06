@@ -1,4 +1,6 @@
 const express = require('express');
+const sniffr = require('sniffr');
+const s = new sniffr();
 
 const User = require('../models/User');
 const List = require('../models/MyList')
@@ -227,6 +229,14 @@ router.post('/reset_password' , async (req , res) =>{
 
     }
 
+})
+
+router.get('/systemUser', async (req, res, next) =>{
+    try {
+        res.status(200).json(s.os.name)
+    } catch (error) {
+        next(error)
+    }
 })
 
 module.exports = app => app.use('/user' , router)
